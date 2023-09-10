@@ -1,0 +1,7 @@
+loadProfile.threads=0
+loadProfile.startUpTime=0
+loadProfile.initialDelay=0
+loadProfile.holdLoadFor=0
+loadProfile.shutdownTime=0
+loadProfile.thinkTimeMin=3000
+loadProfile.thinkTimeMax=7000

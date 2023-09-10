@@ -1,0 +1,4 @@
+loadProfile.threads=10
+loadProfile.startUpTime=300
+loadProfile.holdLoadFor=3600
+loadProfile.shutdownTime=120

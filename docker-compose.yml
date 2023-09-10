@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  jmeter:
+    container_name: jmeter-sample
+    image: adoptopenjdk/maven-openjdk8:latest
+    volumes:
+      - ./:/run/jmeter-test
+    working_dir: /run/jmeter-test
+    environment:
+      MAVEN_HOME: ${LOGSTASH_HOST}
+    command: mvn -Dtest.id=${TEST_ID} -Dtest.env=${TEST_ENV} -Dtest.loadProfile=${LOAD_PROFILE} ${RUN_ARGUMENTS:-} clean verify
+
+  filebeat:
+    container_name: filebeat
+    image: docker.elastic.co/beats/filebeat:${ELK_VERSION}
+    volumes:
+      - ./secrets/:/certs/
+      - ./docker/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./:/usr/share/jmeter-test/:ro
+    environment:
+      LOGSTASH_HOST: ${LOGSTASH_HOST}

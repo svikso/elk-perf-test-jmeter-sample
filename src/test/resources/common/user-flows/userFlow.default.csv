@@ -1,0 +1,4 @@
+userFlow.useCase.weight.publicNavigation=100
+userFlow.useCase.weight.search=50
+userFlow.useCase.loops=2
+userFlow.publicNavigation.loops=3

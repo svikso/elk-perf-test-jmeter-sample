@@ -1,0 +1,4 @@
+loadProfile.threads=1
+loadProfile.holdLoadFor=300
+loadProfile.thinkTimeMin=300
+loadProfile.thinkTimeMax=700
