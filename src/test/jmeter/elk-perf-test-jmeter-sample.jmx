@@ -978,7 +978,6 @@ if(storeId.toInteger() == 2) {
 	def emulatedLatency = prev.getLatency() + emulatedTimeDelta
 	prev.setLatency(emulatedLatency)
 	org.apache.commons.lang3.reflect.FieldUtils.writeField(prev, &quot;elapsedTime&quot;, emulatedLatency, true)
-	log.info(&quot;setting latency: $emulatedLatency&quot;)
 }
 </stringProp>
           </JSR223PostProcessor>
